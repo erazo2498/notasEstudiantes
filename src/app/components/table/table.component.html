@@ -1,1 +1,27 @@
-<p>table works!</p>
+<div class="jumbotron-fluid">
+  <h2>Notas de los estudiantes</h2>
+  <p>Acontinuacion se mostrara una tabla en la cual se encuentra informacion de los estudiantes</p>
+  <hr>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Nota</th>
+        <th scope="col">Observacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estudiante of listaEstudiantes;" [ngClass]="{ colorRojo: !(estudiante.nota >= 3) }">
+        <th scope="row">{{estudiante.codigo}}</th>
+        <td>{{estudiante.nombre}}</td>
+        <td>{{estudiante.apellido}}</td>
+        <td>{{estudiante.nota}}</td>
+        <td><div *ngIf="(estudiante.nota >= 3); else elseBlock"> Aprobó</div>
+          <ng-template #elseBlock>Reprobó</ng-template></td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div>
