@@ -18,19 +18,19 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Codigo</label>
-                        <input type="number" class="form-control" placeholder="digite el código del estudiante" name="codigo" [(ngModel)]="codigo">
+                        <input type="number" class="form-control" placeholder="digite el código del estudiante" name="codigo" [(ngModel)]="codigo" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Nombre</label>
-                        <input type="text" class="form-control" placeholder="digite el Nombre" name="nombre" [(ngModel)]="nombre">
+                        <input type="text" class="form-control" placeholder="digite el Nombre" name="nombre" [(ngModel)]="nombre" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Apellido</label>
-                        <input type="text" class="form-control" placeholder="digite el Apellido" name="apellido" [(ngModel)]="apellido">
+                        <input type="text" class="form-control" placeholder="digite el Apellido" name="apellido" [(ngModel)]="apellido" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Nota</label>
-                        <input type="number" class="form-control" placeholder="digite la nota" name="nota" [(ngModel)]="nota">
+                        <input type="number" class="form-control" placeholder="digite la nota" name="nota" [(ngModel)]="nota" required>
                     </div>
                 </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

@@ -13,13 +13,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let estudiante of listaEstudiantes;" [ngClass]="{ colorRojo: !(estudiante.nota >= 3) }">
+      <tr *ngFor="let estudiante of listaEstudiantes;" [ngClass]="{ colorRojo: (!(estudiante.nota >= 3) || (estudiante.nota > 5)) }">
         <th scope="row">{{estudiante.codigo}}</th>
         <td>{{estudiante.nombre}}</td>
         <td>{{estudiante.apellido}}</td>
         <td>{{estudiante.nota}}</td>
-        <td><div *ngIf="(estudiante.nota >= 3); else elseBlock"> Aprobó</div>
-          <ng-template #elseBlock>Reprobó</ng-template></td>
+        <td><div *ngIf="(estudiante.nota >= 3 && !(estudiante.nota > 5)); else elseBlock"> Aprobó</div>
+          <ng-template #elseBlock> <div *ngIf="(estudiante.nota >= 0 && !(estudiante.nota > 3)); else elseBlock2"> Reprobó </div>
+            <ng-template #elseBlock2> La nota es invalida </ng-template></ng-template></td>
       </tr>
     </tbody>
     
