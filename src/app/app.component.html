@@ -31,8 +31,8 @@
     </svg>
 
   </div>
-  <app-modal></app-modal>
-  <app-table></app-table>
+  <app-modal (agregoEstudiante)="nuevoEstudiante($event)"></app-modal>
+  <app-table [listaEstudiantes]="estudiantes"></app-table>
 
   <!-- Footer -->
   <footer>
